@@ -15,29 +15,11 @@ class ConnectToStreamingAPI extends Command
 	
 	const TWITTER_CONFIG = [
 			
-	'iraq' => [
-			'twitter_access_token' =>'20970930-gLFlb5D7mrF2dD2fZ9prj4k1wulIPBWOG4Epu6UGJ',
-			'twitter_access_token_secret' => 'aA1ds1bgeTgCjNv0zStD4jDoyDHReFqjBfVrwF08Ax4eu',
-			'twitter_consumer_key' => 'MAVpmfSE47UV3LJjFgb0ludc6',
-			'twitter_consumer_secret' => 'JTsVJrMNTpeynHzPZIeXJOBKIBafRhS6pKeRogyu60PHYK7WP3',
-	],
-	'egypt' => [
-			'twitter_access_token' =>'20970930-3tmenpfIwRyonWRDKvpylFbosn3R0li97MjIC3vdE',
-			'twitter_access_token_secret' => 'YxXbMiKsfCzBxPwrIygkEOrJHX15HfSERtfgF8dapkZ8x',
-			'twitter_consumer_key' => 'j1K9M9UuFaosV9k3vgsCOOqFa',
-			'twitter_consumer_secret' => '0DLC2dAQbVTK4uaYd9KGpoGKPRHVvsIglRTS907vz2112oO2wy',
-	],
-	'norway' => [
-			'twitter_access_token' =>'20970930-1FESfHLCqlRH6dSKJFeMQ5pf0u6RSboFdbhgJ6dLZ',
-			'twitter_access_token_secret' => 'HlBXVQSq5jcsvgts3gKPZDdm5DZ9BDkySgTGWYbOVqqyl',
-			'twitter_consumer_key' => 'vGUalEWMypEMdf0jNoXJLHVCN',
-			'twitter_consumer_secret' => 'UWkuxhaBNX9moapfcHfV8UbCECcJ4yUfi0cyLCwxx4JwpRVs3H',
-	],
 	'levant' => [
-			'twitter_access_token' =>'20970930-1FESfHLCqlRH6dSKJFeMQ5pf0u6RSboFdbhgJ6dLZ',
-			'twitter_access_token_secret' => 'HlBXVQSq5jcsvgts3gKPZDdm5DZ9BDkySgTGWYbOVqqyl',
-			'twitter_consumer_key' => 'vGUalEWMypEMdf0jNoXJLHVCN',
-			'twitter_consumer_secret' => 'UWkuxhaBNX9moapfcHfV8UbCECcJ4yUfi0cyLCwxx4JwpRVs3H',
+			'twitter_access_token' =>'',
+			'twitter_access_token_secret' => '',
+			'twitter_consumer_key' => '',
+			'twitter_consumer_secret' => '',
 	],
 		
 			
