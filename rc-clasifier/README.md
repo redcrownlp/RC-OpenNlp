@@ -1,4 +1,4 @@
-# Arabic Dialect Identifier (for RedCrow.co)
+# Arabic Dialect Identifier 
 
 This is an automatic classification approach to identifying Arabic dialects. At this point, it is able to recognize distinguish between) two different dialects: Egyptian Arabic and Iraqi Arabic. More dialects will be added soon.
 
