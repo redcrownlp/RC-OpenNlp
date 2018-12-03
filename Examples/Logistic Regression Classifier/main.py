@@ -51,33 +51,91 @@ def FindFeatureVectorForInputText(line,features_vector):
 
 ###################################################################################################################################################################
 if __name__ == "__main__":
-                #####################################################################
-		# Read NLP Model
-		clf=[]
-		with open('LogisticRegression_Model.pkl', 'rb') as fid:
-		       clf = cPickle.load(fid) 
-                #####################################################################
-		#Read Feature Vector
-		features_vector=XlsxFileFunctions.ReadFeaturesVectorFile('Features_Vector.xlsx')
-		map(unicode,features_vector)
+           #####################################################################
+           #Read Feature Vector
+	   features_vector=XlsxFileFunctions.ReadFeaturesVectorFile('Features_Vector.xlsx')
+	   map(unicode,features_vector)
+	   #####################################################################
+           print "##########################################################################################################" 
+           print "################################ welcome to Arabic NLP Classifier ########################################"
+           while True:
+
+                print "##########################################################################################################"          
 		#####################################################################
 		#Read user Arabic text input
-		text="حاجة بسيطة كده يسطا عورتله ايدة بس ✌ https://t.co/Gowq62bw5t"
-		#####################################################################
+                text = raw_input("Please enter Arabic Language text(More than 100 Characters): ")
+                #####################################################################
 		#Remove non-Arabic text from the input text
 		text=unicode(text, 'utf-8')
 		text=RemoveNonArabicCharacters(text)
-                print "Your input: "
-                print "		   "+text
+                if len(text)<100:
+                      print "Error, Please Enter text contains more that 100 Arabic characters."
+                      continue
                 #####################################################################
+                #print text after pre-processing
+                print "########################################"
+                print "Your input after pre-processing is: "
+                print "		   "+text
+                
+                #####################################################################
+                print "########################################"
+                print "Choose on of the following classifiers"
+                print "1) Egyptian Dialect Classifer."
+                print "2) Gulf Dialect Classifer."
+                print "3) Iraqi Dialect Classifer."
+                print "4) Levant Dialect Classifer."
+                print "5) Maghrebi Dialect Classifer."
+                print "6) All Dialects Classifer."
+                choiceNumber = raw_input("Enter number between 1 and 6: ")
+                #####################################################################
+		# Read NLP Model
+		clf=[]
+
+                if choiceNumber in '1':
+		              with open('./Classifier_Models/Egypt_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                elif choiceNumber in '2':
+		              with open('./Classifier_Models/Gulf_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                elif choiceNumber in '3':
+		              with open('./Classifier_Models/Iraqi_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                elif choiceNumber in '4':
+		              with open('./Classifier_Models/Levant_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                elif choiceNumber in '5':
+		              with open('./Classifier_Models/Maghreb_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                elif choiceNumber in '6':
+		              with open('./Classifier_Models/All_Dialects_LogisticRegression_Model.pkl', 'rb') as fid:
+		                            clf = cPickle.load(fid) 
+                else:
+                      print "Error, Please Enter number between 1 and 6."
+                      continue
+
+                #####################################################################
+
 		line_features=FindFeatureVectorForInputText(text,features_vector)
 		result_label=clf.predict([line_features])
 		classesResult=clf.predict_proba([line_features]) 
 		labels=clf.classes_
                 print "Dialect results:"
-		print "		"+labels[0] + " dialect with Accuracy equal {0:.2f}%.".format(classesResult[0][0]*100)
-		print "		"+labels[1] + " dialect with Accuracy {0:.2f}%.".format(classesResult[0][1]*100)
-		print "		"+labels[2] + " dialect with Accuracy {0:.2f}%.".format(classesResult[0][2]*100)
-		print "		"+labels[3] + " dialect with Accuracy {0:.2f}%.".format(classesResult[0][3]*100)
-		print "		"+labels[4] + " dialect with Accuracy {0:.2f}%.".format(classesResult[0][4]*100)
+                if choiceNumber in '6':
+		        print "		 Your Text is Egyptian dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
+		        print "		 Your Text is Gulf dialect with Probability equal {0:.2f}%.".format(classesResult[0][1]*100)
+		        print "		 Your Text is Iraqi dialect with Probability equal {0:.2f}%.".format(classesResult[0][2]*100)
+		        print "		 Your Text is Levant dialect with Probability equal {0:.2f}%.".format(classesResult[0][3]*100)
+		        print "		 Your Text is Maghrebi dialect with Probability equal {0:.2f}%.".format(classesResult[0][4]*100)
+
+                else:
+                        if labels[0] in "Egypt/":
+                            print "		Your Text is Egyptian dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
+                        if labels[0] in "Gulf/":
+                            print "		Your Text is Gulf dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
+                        if labels[0] in "Iraqi/":
+                            print "		Your Text is Iraqi dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
+                        if labels[0] in "Levant/":
+                            print "		Your Text is Levant dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
+                        if labels[0] in "Maghreb/":
+                            print "		Your Text is Maghrebi dialect with Probability equal {0:.2f}%.".format(classesResult[0][0]*100)
 
