@@ -45,6 +45,11 @@ Extract features from your dataset as following:
 > python2.7 Testing_LogisticRegression_Classifier.py
 - The Accuracy Result will print in the screen.
 4. Examples Folder:<br/>
-This folder contains NLP training models which are ready to used. The models take the features vector and the testing dataset as input and return back the dialects probability results to user.
-</br>To run the examples, go to Examples folder and run the "main.py" file using the following command: 
+This folder contains NLP training models which are ready to used. The models take the features vector and the testing dataset as input and return back the dialects probability results to the user.
+</br>The folder contains two subfolders that represent two machine learning classifiers:
+- Logistic Regression classifier: 
+</br>To run the Logistic Regression Classifier, go to "Examples/Logistic Regression Classifier" folder and run the "main.py" file using the following command: 
+> python2.7 main.py
+- MLP classifier: 
+</br>To run the MLP Classifier, go to "Examples/MLPClassifier" folder and run the "main.py" file using the following command: 
 > python2.7 main.py
