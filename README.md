@@ -13,6 +13,10 @@ Install **python-pip** and use it to download the following packages:
 - nltk
 - sklearn
 
+## How to Clone the Project?
+
+This repositery used Git Large File Storage (git-lfs). Therefore, you need to [install Git-lfs](https://github.com/git-lfs/git-lfs/wiki/Installation) to be able to used the ready models in this project.
+
 
 ## How to run the NLP project?
 The project contains the follwoing four folders:
