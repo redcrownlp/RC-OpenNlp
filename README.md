@@ -57,3 +57,5 @@ This folder contains NLP training models which are ready to used. The models tak
 - MLP classifier: 
 </br>To run the MLP Classifier, go to "Examples/MLPClassifier" folder and run the "main.py" file using the following command: 
 > python2.7 main.py
+# License
+This project is distributed under the 3-Clause BSD License.
