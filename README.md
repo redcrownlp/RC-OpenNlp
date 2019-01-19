@@ -12,6 +12,7 @@ Install **python-pip** and use it to download the following packages:
 - openpyxl
 - nltk
 - sklearn
+- pyarabic
 
 ## How to Clone the Project?
 
